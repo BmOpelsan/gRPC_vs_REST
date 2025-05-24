@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package temperature;
+
+// Сервис с двумя RPC-методами
+service TemperatureConverter {
+  rpc ToCelsius (FahrenheitRequest) returns (CelsiusResponse);
+  rpc ToFahrenheit (CelsiusRequest) returns (FahrenheitResponse);
+}
+
+message FahrenheitRequest {
+  double fahrenheit = 1;
+}
+
+message CelsiusRequest {
+  double celsius = 1;
+}
+
+message CelsiusResponse {
+  double celsius = 1;
+}
+
+message FahrenheitResponse {
+  double fahrenheit = 1;
+}
